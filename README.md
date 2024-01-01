@@ -1,8 +1,8 @@
-#XmlParser
+**XmlParser**
 
 A dynamic XML parser library designed to extract XML elements through key-value pairs.
 
-#Requirements
+**Requirements**
 
 Libexpat >= 2.5.0
 
