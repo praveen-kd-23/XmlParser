@@ -6,7 +6,7 @@ A dynamic XML parser library designed to extract XML elements through key-value 
 
 Libexpat >= 2.5.0
 
-#Instructions
+**Instructions**
 
 Create a XML object for the given xml file
 
@@ -21,5 +21,15 @@ void callback(const char *key, const char *value){
     
 }
 xml_iterate_key_value_pairs(root, callback);
+```
+
+**Compilation**
+
+Use make command to compile and install
+
+```
+make
+
+make install
 ```
 
