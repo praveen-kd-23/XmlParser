@@ -36,8 +36,8 @@ typedef enum {
   true = 1
 }bool;
 
-typedef void (*xml_iterate_cb) (const char *key, const char *value);
+typedef void (*xml_iterate_cb) (const char *key, const char *value, void *user_data);
 
 void xml_print_structure(XML *root, int level);
 XML* xml_parse(char *filename);
-void xml_iterate_key_value_pairs(XML *root , xml_iterate_cb callback_func);
+void xml_iterate_key_value_pairs(XML *root , xml_iterate_cb callback_func, void *user_data);

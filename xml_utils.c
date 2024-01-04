@@ -9,7 +9,7 @@ bool x_strcmp(const char *a, const char *b){
 
     return strcmp(a,b) == 0 ? true : false;
 }
-void xml_iterate_key_value_pairs(XML *root , xml_iterate_cb callback_func){
+void xml_iterate_key_value_pairs(XML *root , xml_iterate_cb callback_func, void *user_data){
      
      if(!root) return ;
      
@@ -31,18 +31,18 @@ void xml_iterate_key_value_pairs(XML *root , xml_iterate_cb callback_func){
         }
        
         if(key && value){
-         callback_func(key, value);
+         callback_func(key, value, user_data);
         }
      }
 
      if(root->child){
-       xml_iterate_key_value_pairs(root->child, callback_func);
+       xml_iterate_key_value_pairs(root->child, callback_func, user_data);
      }
 
      XML *siblings = root->siblings_head;
 
      while(siblings){
-      xml_iterate_key_value_pairs(siblings, callback_func);
+      xml_iterate_key_value_pairs(siblings, callback_func, user_data);
       siblings = siblings->siblings_tail;
      }
 }
